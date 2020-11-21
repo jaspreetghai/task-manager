@@ -1,0 +1,130 @@
+// Custom colors for application.
+$turquoise: #44ddd0;
+$green: #27d7a1;
+$light-green: #45f69e;
+$dark-green: rgb(0, 100, 80);
+$light: #f8f8f8;
+$primary: $green;
+$link: $turquoise;
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.modal-box {
+  min-height: 130px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 35px;
+
+  .list-name {
+    background: hsl(0, 0%, 96%);
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+    font-size: 1.3rem;
+    box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+    border-style: unset;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .create-btn {
+    background: $primary;
+    color: #fff;
+    border-color: transparent;
+    font-size: 1.25rem;
+    padding: calc(0.5em - 1px) 1em calc(0.5em - 1px) 1em;
+    border-radius: 4px;
+    margin-left: 20px;
+    cursor: pointer;
+    float: right;
+    margin-top: 15px;
+    text-decoration: none;
+  }
+}
+
+input,
+select {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  color: #363636;
+  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+  max-width: 100%;
+  width: 100%;
+  padding: 0 2.5rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+
+.has-icon {
+  position: relative;
+
+  .icon-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2.5em;
+    pointer-events: none;
+    width: 2.5em;
+  }
+}
+
+button {
+  background: $primary;
+  color: #fff;
+  border-color: transparent;
+  font-size: 1rem;
+  padding: calc(0.5em - 1px) 1em calc(0.5em - 1px) 1em;
+  border-radius: 4px;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+input {
+  padding-left: 10px;
+  box-sizing: border-box;
+  background: $light;
+}
+
+.login-box {
+  background: #fff;
+  padding: 35px;
+  border-radius: 5px;
+
+  width: 350px;
+  max-width: 350px;
+}
+
+.login-btn {
+  margin-left: 0;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+}
+
+.has-text-grey {
+  color: #888;
+}
+
+.btn-control {
+  display: flex;
+  justify-content: flex-end;
+}

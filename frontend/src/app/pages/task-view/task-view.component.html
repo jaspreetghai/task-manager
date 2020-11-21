@@ -1,0 +1,50 @@
+<div class="centered-content">
+  <div class="task-manager-container">
+    <div class="side-bar">
+      <h1 class="title">Lists</h1>
+      <div class="list-menu">
+        <a
+          class="list-menu__item"
+          *ngFor="let list of lists"
+          [routerLink]="['/lists', list._id]"
+          routerLinkActive="is-active"
+        >
+        <div class="task-text"> {{ list.title }} </div>
+          <div class="icon-container" *ngIf="this.selectedListId === list._id">
+            <span class="material-icons task-icon edit" [routerLink]="['/edit-list', list._id]" (click)="$event.stopPropagation();$event.preventDefault();"> create </span>
+            <span class="material-icons task-icon delete" (click)="onDeleteList(list._id);$event.stopPropagation();$event.preventDefault();"> delete_forever </span>
+          </div>
+        </a>
+      </div>
+      <button class="new-list" routerLink="/new-list">+ New List</button>
+    </div>
+
+    <div class="task-list-container">
+      <h1 class="title">Tasks</h1>
+      <div
+        class="task"
+        *ngFor="let task of tasks"
+        (click)="onTaskClick(task)"
+        [ngClass]="{ completed: task.completed }"
+      >
+      <div class="task-text"> {{task.title}} </div>
+        <div class="icon-container">
+          <span class="material-icons task-icon edit" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]" (click)="$event.stopPropagation();$event.preventDefault();"> create </span>
+          <span class="material-icons task-icon delete"  (click)="onDeleteTask(task._id);$event.stopPropagation();$event.preventDefault();"> delete_forever </span>
+        </div>
+      </div>
+
+      <h1 class="empty-state-text" *ngIf="tasks && tasks.length === 0">
+        There are no tasks here! Click the add button to create a new task.
+      </h1>
+      <div *ngIf="!tasks">
+        <h3 class="empty-state-text">Please select a list from the sidebar</h3>
+      </div>
+      <div *ngIf="tasks">
+        <button class="circle-add-button" routerLink="./new-task">
+          <span class="material-icons add-icon"> add </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
