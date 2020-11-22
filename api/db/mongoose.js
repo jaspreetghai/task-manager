@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mmongodb+srv://admin:admin@cluster0.0iiig.mongodb.net/TaskManager?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(() => {
+mongoose.connect('mmongodb+srv://admin:admin@cluster0.0iiig.mongodb.net/TaskManager?retryWrites=true&w=majority', { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }).then(() => {
     console.log("Connected to mongoDB");
 }).catch((e) => {
     console.log("Error connecting to MongoDb::", e);

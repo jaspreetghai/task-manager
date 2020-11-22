@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const { mongoose } = require('./db/mongoose');
 
@@ -30,6 +31,9 @@ app.use(function (req, res, next) {
 
     next();
 });
+
+// Create link to Angular build directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // check whether the request has a valid JWT access token
@@ -107,7 +111,6 @@ let verifySession = (req, res, next) => {
 
 
 /* ROUTE HANDLERS */
-
 /* LIST ROUTES */
 
 /**
@@ -373,7 +376,6 @@ app.get('/users/me/access-token', verifySession, (req, res) => {
 })
 
 
-
 /* HELPER METHODS */
 let deleteTasksFromList = (_listId) => {
     Task.deleteMany({
@@ -384,8 +386,8 @@ let deleteTasksFromList = (_listId) => {
 }
 
 
+const port = process.env.PORT || 8080
 
-
-app.listen(3000, () => {
-    console.log("Server is listening on port 3000");
+app.listen(port, () => {
+    console.log("Server is listening on port "+port);
 })
