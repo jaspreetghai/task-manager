@@ -12,6 +12,8 @@ export class WebRequestService {
   }
 
   get(uri: string) {
+    console.log(uri);
+    
     return this.http.get(`${this.ROOT_URL}${uri}`);
   }
 
@@ -29,7 +31,7 @@ export class WebRequestService {
 
   login(email: string, password: string) {
     return this.http.post(
-      `${this.ROOT_URL}/users/login`,
+      `${this.ROOT_URL}users/login`,
       {
         email,
         password,
@@ -42,7 +44,7 @@ export class WebRequestService {
 
   signup(email: string, password: string) {
     return this.http.post(
-      `${this.ROOT_URL}/users`,
+      `${this.ROOT_URL}users`,
       {
         email,
         password,
