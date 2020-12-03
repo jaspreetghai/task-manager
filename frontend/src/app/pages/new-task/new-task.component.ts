@@ -21,7 +21,7 @@ export class NewTaskComponent implements OnInit {
   }
 
   createTask(title: string) {
-    this.taskService.creatTasks(title, this.listId).subscribe((newTask: Task) => {
+    this.taskService.createTask(title, this.listId).subscribe((newTask: Task) => {
       this.router.navigate(['../'],{relativeTo: this.route});
     });
   }
