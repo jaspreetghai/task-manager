@@ -11,3 +11,7 @@ Steps for deployement
 2) Deploy on heroku.
 
 For authentication, I have used JWT.
+
+URL: https://mean-stack-task-manager.herokuapp.com/login
+ID: test@test.com/test1@test.com
+PASS: password
